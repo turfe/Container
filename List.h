@@ -231,6 +231,7 @@ public:
             delete_element(value, root);
         }
     }
+    template <typename U> friend class List_Iterator;
 };
 
 #endif //LIST_H

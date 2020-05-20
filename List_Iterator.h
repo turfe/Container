@@ -10,8 +10,9 @@
 
 template<typename T>
 class List_Iterator {
-public:
+private:
     Element<T> *p;
+public:
     using iterator_category = forward_iterator_tag;
     using value_type = T;
     using pointer = T *;

@@ -10,15 +10,18 @@
 
 template<typename T>
 class Element {
-public:
+private:
     T value;
     Element<T> *next;
+public:
     Element() : next(nullptr) {}
 
     Element(T v) : value(v), next(nullptr) {}
 
     Element(T v, Element<T> *n) : value(v), next(n) {}
 
+    template <typename U> friend class List_Iterator;
+    template <typename U> friend class List;
 };
 
 class Exception : public runtime_error {
