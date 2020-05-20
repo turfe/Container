@@ -3,4 +3,4 @@ project(class_d)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(class_d main.cpp List.h Exepction.h List_Iterator.h)
+add_executable(class_d main.cpp List.h List_Utils.h List_Iterator.h)

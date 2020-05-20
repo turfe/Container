@@ -6,7 +6,7 @@
 #define CLASS_D_LIST_ITERATOR_H
 
 #include "List.h"
-#include "Exepction.h"
+#include "List_Utils.h"
 
 template<typename T>
 class List_Iterator {
@@ -38,8 +38,12 @@ public:
     }
 
     List_Iterator operator++(int) {
+        List_Iterator result = *this;
+        if (p == nullptr) {
+            throw Exception();
+        }
         p = p->next;
-        return *this;
+        return result;
     }
 
     bool operator==(const List_Iterator &it) const {

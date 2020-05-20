@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "List_Iterator.h"
-#include "Exepction.h"
+#include "List_Utils.h"
 
 using namespace std;
 
@@ -110,13 +110,15 @@ private:
         pre_elem = root;
         cur_elem = root;
         while (cur_elem->value != value) {
-            if ((cur_elem->next == nullptr) & (cur_elem->value != value)) {
+            if ((cur_elem->next == nullptr) && (cur_elem->value != value)) {
                 return;
             }
             cur_elem = cur_elem->next;
-        }
-        while (pre_elem->next != cur_elem) {
-            pre_elem = pre_elem->next;
+            if (cur_elem == root->next){
+
+            } else {
+                pre_elem = pre_elem->next;
+            }
         }
         pre_elem->next = cur_elem->next;
         delete cur_elem;
